@@ -1,0 +1,18 @@
+*.log
+.DS_Store
+.grunt
+node_modules
+_storage
+coverage
+dist
+.sass-cache
+.idea
+### SublimeText ###
+# cache files for sublime text
+*.tmlanguage.cache
+*.tmPreferences.cache
+*.stTheme.cache
+
+# workspace files are user-specific
+*.sublime-workspace
+*.sublime-project
