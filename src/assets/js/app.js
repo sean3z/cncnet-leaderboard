@@ -5,7 +5,8 @@ angular.module('app', [
     'Leaderboard',
     'Leaderboard.Player',
     'Champions',
-    'Game'
+    'Game',
+    'API'
 ]);
 
 angular.module('app').config(configuration);
