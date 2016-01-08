@@ -3,26 +3,30 @@ angular.module('API').factory('API', APISvc);
 APISvc.$inject =['$http', '$q'];
 function APISvc($http, $q) {
     var factory = this;
-    factory.url = 'http://api.cncnet.org/ladder';
+    factory.url = 'http://api.cncnet.org';
 
     factory.getTop50 = getTop50;
     factory.getPlayer = getPlayer;
     factory.getHoF = getHoF;
-    
+    factory.auth = auth;
+
     return factory;
 
     //////
 
     function getTop50(game) {
-        return request(game);
+        return request('/ladder/' + game);
     }
 
     function getPlayer(game, player) {
-        return request(game + '/player/' + player);
+        return request('/ladder/' + game + '/player/' + player);
     }
 
     function getHoF() {
-        return request('hof');
+        return request('/ladder/hof');
+    }
+
+    function auth() {
     }
 
     function request(url) {
@@ -35,7 +39,7 @@ function APISvc($http, $q) {
             .error(function (data) {
                 deferred.reject(status);
             });
-            
+
         return deferred.promise;
     }
 }

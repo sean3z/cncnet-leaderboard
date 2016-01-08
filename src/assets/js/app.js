@@ -2,6 +2,7 @@ angular.module('app', [
     'ui.router',
     'ui.bootstrap',
     'index',
+    'Account',
     'Leaderboard',
     'Leaderboard.Player',
     'Champions',
@@ -20,6 +21,20 @@ function configuration($stateProvider, $urlRouterProvider, $locationProvider) {
             templateUrl: '/assets/js/modules/home/home.view.html'
         })
 
+        .state('account', {
+            url: '/account',
+            controller: 'AccountCtrl',
+            controllerAs: 'accountCtrlVm',
+            templateUrl: '/assets/js/modules/account/account.view.html'
+        })
+
+        .state('champions', {
+            url: '/champions/:game',
+            controller: 'ChampionsCtrl',
+            controllerAs: 'championsCtrlVm',
+            templateUrl: '/assets/js/modules/champions/champions.view.html'
+        })
+
         .state('leaderboard', {
             url: '/:game',
             controller: 'LeaderboardCtrl',
@@ -32,13 +47,6 @@ function configuration($stateProvider, $urlRouterProvider, $locationProvider) {
             controller: 'PlayerCtrl',
             controllerAs: 'playerCtrlVm',
             templateUrl: '/assets/js/modules/player/player.view.html'
-        })
-
-        .state('champions', {
-            url: '/champions/:game',
-            controller: 'ChampionsCtrl',
-            controllerAs: 'championsCtrlVm',
-            templateUrl: '/assets/js/modules/champions/champions.view.html'
         });
 
     $urlRouterProvider.otherwise('/');
