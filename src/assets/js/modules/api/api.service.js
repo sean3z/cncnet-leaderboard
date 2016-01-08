@@ -12,7 +12,7 @@ function APISvc($http, $q) {
 
     return factory;
 
-    //////
+    //////////
 
     function getTop50(game) {
         return request('/ladder/' + game);
@@ -26,7 +26,10 @@ function APISvc($http, $q) {
         return request('/ladder/hof');
     }
 
-    function auth() {
+    function auth(player, username, password) {
+        var deferred = $q.defer();
+        deferred.resolve(true);
+        return deferred.promise;
     }
 
     function request(url) {
@@ -37,7 +40,7 @@ function APISvc($http, $q) {
                 return deferred.resolve(data);
             })
             .error(function (data) {
-                deferred.reject(status);
+                deferred.reject(data);
             });
 
         return deferred.promise;

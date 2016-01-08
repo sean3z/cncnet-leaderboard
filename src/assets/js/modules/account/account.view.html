@@ -15,10 +15,17 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="panel panel-default panel-profile clearfix">
+                        <div class="col-md-12" ng-if="!accountCtrlVm.isLoggedIn">
+                            <h4>Log In</h4>
+                            <form ng-submit="accountCtrlVm.login()">
+                                <input type="text" ng-model="accountCtrlVm.username" placeholder="Forum Username" />
+                                <input type="password" ng-model="accountCtrlVm.password" placeholder="Forum Password" />
+                                <input type="text" ng-model="accountCtrlVm.player" placeholder="Game Nick" />
+                                <input type="submit" class="btn btn-large btn-success" value="Login" />
+                            </form>
+                        </div>
 
-
-                        <div class="col-md-12">
-
+                        <div class="col-md-12" ng-if="accountCtrlVm.isLoggedIn">
 
                         </div>
                     </div>
