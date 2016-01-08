@@ -1,4 +1,4 @@
-<div ng-controller="HomeController" class="home-listings">
+<div class="home-listings">
     <div class="feature-banner jumbo-feature text-center">
         <div class="container large">
             <h2 class="text-uppercase">Leaderboard</h2>
@@ -40,11 +40,11 @@
                                             </tr>
                                             </thead>
                                             <tbody>
-                                            <tr ng-repeat="player in top5.ra | limitTo : 5">
+                                            <tr ng-repeat="player in homeCtrlVm.top5.ra | limitTo : 5">
                                                 <td><a href="#/ra">{{player.name}}</a>
                                                 </td>
-                                                <td>{{ player.points }} points</td>
-                                                <td>{{ player.wins || 0}}</td>
+                                                <td>{{player.points}} points</td>
+                                                <td>{{player.wins || 0}}</td>
                                             </tr>
                                             </tbody>
                                         </table>
@@ -85,11 +85,11 @@
                                             </tr>
                                             </thead>
                                             <tbody>
-                                            <tr ng-repeat="player in top5.am | limitTo : 5">
+                                            <tr ng-repeat="player in homeCtrlVm.top5.am | limitTo : 5">
                                                 <td><a href="#/am">{{player.name}}</a>
                                                 </td>
-                                                <td>{{ player.points }} points</td>
-                                                <td>{{ player.wins || 0}}</td>
+                                                <td>{{player.points}} points</td>
+                                                <td>{{player.wins || 0}}</td>
                                             </tr>
                                             </tbody>
                                         </table>
@@ -132,11 +132,11 @@
                                             </tr>
                                             </thead>
                                             <tbody>
-                                            <tr ng-repeat="player in top5.ts | limitTo : 5">
+                                            <tr ng-repeat="player in homeCtrlVm.top5.ts | limitTo : 5">
                                                 <td><a href="#/ts">{{player.name}}</a>
                                                 </td>
-                                                <td>{{ player.points }} points</td>
-                                                <td>{{ player.wins || 0}}</td>
+                                                <td>{{player.points}} points</td>
+                                                <td>{{player.wins || 0}}</td>
                                             </tr>
                                             </tbody>
                                         </table>
@@ -176,11 +176,11 @@
                                             </tr>
                                             </thead>
                                             <tbody>
-                                            <tr ng-repeat="player in top5.fs | limitTo : 5">
+                                            <tr ng-repeat="player in homeCtrlVm.top5.fs | limitTo : 5">
                                                 <td><a href="#/fs">{{player.name}}</a>
                                                 </td>
-                                                <td>{{ player.points }} points</td>
-                                                <td>{{ player.wins || 0}}</td>
+                                                <td>{{player.points}} points</td>
+                                                <td>{{player.wins || 0}}</td>
                                             </tr>
                                             </tbody>
                                         </table>

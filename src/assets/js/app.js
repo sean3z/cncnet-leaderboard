@@ -14,7 +14,9 @@ angular.module('app').config(configuration);
 function configuration($stateProvider, $urlRouterProvider, $locationProvider) {
     $stateProvider
         .state('index', {
-            url: '/index',
+            url: '/',
+            controller: 'HomeCtrl',
+            controllerAs: 'homeCtrlVm',
             templateUrl: '/assets/js/modules/home/home.view.html'
         })
 
@@ -39,6 +41,6 @@ function configuration($stateProvider, $urlRouterProvider, $locationProvider) {
             templateUrl: '/assets/js/modules/champions/champions.view.html'
         });
 
-    $urlRouterProvider.otherwise('/index');
+    $urlRouterProvider.otherwise('/');
     //$locationProvider.html5Mode(true).hashPrefix('!'); // todo: rewrite server side too...
 }

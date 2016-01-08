@@ -1,23 +1,25 @@
 'use strict';
 
 // Ladder controller
-angular.module('index').controller('HomeController', ['$scope', '$state', '$stateParams', 'LadderSvc', 'PlayerSearch',
-    function ($scope, $state, $stateParams, LadderSvc) {
+angular.module('index').controller('HomeCtrl', HomeCtrl);
 
-        // Its a little hacky, but will do for now
-        var games = ['ts', 'fs', 'ra', 'am'];
+HomeCtrl.$inject = ['API'];
+function HomeCtrl(API) {
+    var vm = this;
 
-        $scope.top5 = {
-            ts: '',
-            fs: '',
-            ra: '',
-            am: ''
-        };
+    // Its a little hacky, but will do for now
+    var games = ['ts', 'fs', 'ra', 'am'];
 
-        games.forEach(function (key) {
-            LadderSvc.getTop50(key).then(function (response) {
-                $scope.top5[key] = response;
-            });
+    vm.top5 = {
+        ts: '',
+        fs: '',
+        ra: '',
+        am: ''
+    };
+
+    games.forEach(function (key) {
+        API.getTop50(key).then(function (response) {
+            vm.top5[key] = response;
         });
-    }
-]);
+    });
+}
