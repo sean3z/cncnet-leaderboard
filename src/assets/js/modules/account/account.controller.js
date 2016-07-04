@@ -7,15 +7,16 @@ function AccountCtrl(API) {
     vm.isLoggedIn = false;
     vm.login = login;
 
-    vm.nicks = {
-        ra: ['sean'],
-        ts: ['tahj']
-    };
+    function login() {
+        var _success = function(data) {
+            vm.nicks = data;
+            vm.isLoggedIn = true;
+        };
 
-    function login(player, username, password) {
-        console.log('vm', vm);
-        API.auth(player, username, password).then(function(data) {
-            alert('logged in');
-        });
+        var _error = function(data) {
+            alert('Incorrect Username/Password');
+        };
+
+        API.auth(vm.username, vm.password).then(_success, _error);
     }
 }

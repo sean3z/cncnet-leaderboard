@@ -18,15 +18,27 @@
                         <div class="col-md-12" ng-if="!accountCtrlVm.isLoggedIn">
                             <h4>Log In</h4>
                             <form ng-submit="accountCtrlVm.login()">
-                                <input type="text" ng-model="accountCtrlVm.username" placeholder="Forum Username" />
-                                <input type="password" ng-model="accountCtrlVm.password" placeholder="Forum Password" />
-                                <input type="text" ng-model="accountCtrlVm.player" placeholder="Game Nick" />
-                                <input type="submit" class="btn btn-large btn-success" value="Login" />
+                                <div class="form-group">
+                                    <label>Username</label>
+                                    <input type="text" class="form-control" ng-model="accountCtrlVm.username" placeholder="Username" /> 
+                                </div>
+                                <div class="form-group">
+                                    <label>Password</label>
+                                    <input type="password" class="form-control" ng-model="accountCtrlVm.password" placeholder="Password" /> 
+                                </div>
+                                <div class="form-group">
+                                    <input type="submit" class="btn btn-large btn-success" value="Login" />
+                                </div>
                             </form>
                         </div>
 
                         <div class="col-md-12" ng-if="accountCtrlVm.isLoggedIn">
-
+                            <label>Game Nicks</label>
+                            <ul>
+                                <li ng-repeat="nick in accountCtrlVm.nicks">
+                                    {{nick.name}}
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>
