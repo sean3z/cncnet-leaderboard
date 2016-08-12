@@ -3,7 +3,7 @@ angular.module('API').factory('API', APISvc);
 APISvc.$inject =['$http', '$q'];
 function APISvc($http, $q) {
     var factory = this;
-    factory.url = '//'+ window.location.hostname +':4007';
+    factory.url = '//'+ window.location.hostname + '/api';
 
     factory.getTop50 = getTop50;
     factory.getPlayer = getPlayer;
