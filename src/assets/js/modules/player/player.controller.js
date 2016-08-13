@@ -35,6 +35,7 @@ function PlayerCtrl($state, $stateParams, API) {
 
     API.getPlayer(vm.abbr, vm.player).then(function (response) {
         vm.details = response;
-        vm.rankTitle = vm.rankNames();
+        vm.rankTitle = vm.rankNames(); // TODO getter?
+        console.log(vm.details);
     });
 }

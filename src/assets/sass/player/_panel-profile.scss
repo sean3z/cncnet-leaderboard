@@ -91,6 +91,21 @@ $text-dark: mix($off-white, $dark-base, 15%);
   background-image: url(../images/game-icons/nod.png);
 }
 
+// TODO This needs to be countries, but meh for now...
+// https://github.com/sean3z/cncnet-api/blob/master/src/server/wol/yr.md
+
+.yr .faction_0 {
+  background-image: url(../images/game-icons/allied.png);
+}
+
+.yr .faction_1 {
+  background-image: url(../images/game-icons/ra2.png);
+}
+
+.yr .faction_2 {
+  background-image: url(../images/game-icons/yr.png);
+}
+
 // TD:GDI
 .faction_GDI {
   background-image: url(../images/game-icons/gdi-td.png);
