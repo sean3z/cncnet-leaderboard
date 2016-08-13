@@ -3,19 +3,22 @@
 // Ladder controller
 angular.module('Leaderboard').controller('LeaderboardCtrl', LeaderboardCtrl);
 
-LeaderboardCtrl.$inject = ['$stateParams', 'API', 'PlayerSearch', 'GameSvc'];
-function LeaderboardCtrl($stateParams, API, PlayerSearch, GameSvc) {
+LeaderboardCtrl.$inject = ['$stateParams', 'API', 'GameSvc'];
+function LeaderboardCtrl($stateParams, API, GameSvc) {
     var vm = this;
     vm.abbr = $stateParams.game;
+
+    vm.model = {
+        search: 'hello'
+    };
 
     API.getTop50(vm.abbr).then(function(response) {
         vm.players = response;
     });
 
-    // Search by player name
-    vm.searchByPlayer = function(){
-        if(vm.abbr){
-            PlayerSearch.byPlayer(vm.abbr, vm.search.name).then(function (response) {
+    vm.searchByPlayer = function () {
+        if (vm.abbr != null) {
+            API.search(vm.abbr, vm.model.search).then(function (response) {
                 vm.searchResults = response;
             });
         }

@@ -14,10 +14,11 @@
                     <div class="input-group">
                         <span class="input-group-addon" id="basic-addon1"><i class="fa fa-user"></i></span>
 
-                        <form name="search" novalidate ng-submit="leaderboardCtrlVm.search.$valid && leaderboardCtrlVm.searchByPlayer()">
-                            <input type="text" ng-model="search.name" name="player" class="form-control"
+                        <form name="search" novalidate ng-submit="leaderboardCtrlVm.searchByPlayer()">
+                            <input type="text" name="filter" data-ng-model="model.search" class="form-control"
                                    placeholder="Enter a player name to search">
                         </form>
+
                     </div>
                 </div>
             </div>

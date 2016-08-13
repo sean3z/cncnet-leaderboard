@@ -10,6 +10,7 @@ function APISvc($http, $q) {
     factory.getPlayer = getPlayer;
     factory.getHoF = getHoF;
     factory.auth = auth;
+    factory.search = search;
 
     return factory;
 
@@ -54,6 +55,14 @@ function APISvc($http, $q) {
                 deferred.reject(data);
             });
 
+        return deferred.promise;
+    }
+
+    function search(game, name) {
+        var deferred = $q.defer();
+        $http.post(factory.url + '/' + game + '/' + 'search', { "player": name })
+            .success(function (data, status, headers, config) { return deferred.resolve(data); })
+            .error(function (data, status, headers, config) { console.log(status);});
         return deferred.promise;
     }
 }
