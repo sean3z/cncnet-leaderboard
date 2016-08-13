@@ -4,7 +4,7 @@ APISvc.$inject = ['$http', '$q'];
 
 function APISvc($http, $q) {
     var factory = this;
-    var hostName = window.location.host.split(":")[0] == "localhost" ? "ladder.cncnet.org" : window.location.hostname;
+    var hostName = "ladder.cncnet.org";
     factory.url = '//'+ hostName + '/api';
     factory.getTop50 = getTop50;
     factory.getPlayer = getPlayer;

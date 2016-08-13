@@ -129,7 +129,7 @@
                                         <ul class="list-unstyled">
                                             <li>
                                                 <a href="#{{abbr}}/player/{{participant.name}}">
-                                                    <span class="game-faction faction_{{ participant.sid }}"></span>
+                                                    <span class="game-faction faction_{{ playerCtrlVm.abbr == 'yr' ? participant.cty : participant.sid }}"></span>
                                                     <span class="label" ng-class="{'label-success': participant.won > 0, 'label-danger': participant.loss > 0, 'label-primary': game.oosy}">
                                                         {{participant.name}}
                                                         <i class="fa fa-fw fa-lg" ng-class="{'fa-smile-o': participant.won > 0, 'fa-frown-o': participant.loss > 0}"></i>
@@ -151,6 +151,8 @@
                                 </td>
                                 <td>
                                     <ul class="list-unstyled">
+                                      
+                                        <li>Game Mode: {{ playerCtrlVm.modes[game.mode].type}} </li>
                                         <li>Tech level: {{ game.settings.tech }}</li>
                                         <li>Money: {{ game.settings.cred }}</li>
                                         <li ng-if="game.oosy">Game: Out of Sync</li>

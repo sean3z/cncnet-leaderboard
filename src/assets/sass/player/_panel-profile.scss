@@ -79,6 +79,7 @@ $text-dark: mix($off-white, $dark-base, 15%);
   padding-left: 10px;
   background-position: center;
   background-size: 100%;
+  background-color: #313e4f;
 }
 
 // GDI
@@ -91,19 +92,59 @@ $text-dark: mix($off-white, $dark-base, 15%);
   background-image: url(../images/game-icons/nod.png);
 }
 
-// TODO This needs to be countries, but meh for now...
-// https://github.com/sean3z/cncnet-api/blob/master/src/server/wol/yr.md
+// Countries
+/* 
+    cty 0-9
+    0=america
+    1=korea
+    2=france
+    3=germany
+    4=great britain
+    5=libya
+    6=iraq
+    7=cuba
+    8=russia
+    9=Yuri
+*/
 
 .yr .faction_0 {
-  background-image: url(../images/game-icons/allied.png);
+  background-image: url(../images/game-icons/america.png);
 }
 
 .yr .faction_1 {
-  background-image: url(../images/game-icons/ra2.png);
+  background-image: url(../images/game-icons/korea.png);
 }
 
 .yr .faction_2 {
-  background-image: url(../images/game-icons/yr.png);
+  background-image: url(../images/game-icons/france.png);
+}
+
+.yr .faction_3 {
+  background-image: url(../images/game-icons/germany.png);
+}
+
+.yr .faction_4 {
+  background-image: url(../images/game-icons/great_britain.png);
+}
+
+.yr .faction_5 {
+  background-image: url(../images/game-icons/libya.png);
+}
+
+.yr .faction_6 {
+  background-image: url(../images/game-icons/iraq.png);
+}
+
+.yr .faction_7 {
+  background-image: url(../images/game-icons/cuba.png);
+}
+
+.yr .faction_8 {
+  background-image: url(../images/game-icons/russia.png);
+}
+
+.yr .faction_9 {
+  background-image: url(../images/game-icons/yuri.png);
 }
 
 // TD:GDI

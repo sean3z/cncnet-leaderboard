@@ -58,7 +58,7 @@ module.exports = function (grunt) {
 
         injector: {
             options: {
-                ignorePath: 'src/'
+                ignorePath: 'src/',
             },
             dev: {
                 files: {

@@ -20,6 +20,20 @@ function PlayerCtrl($state, $stateParams, API) {
         { position: 10, cup: null, title: "Second Lieutenant" }
     ];
 
+    // TODO have type interface?
+    vm.modes = [
+       { type: "TODO - API"}, // 0 does not exist, so should be blank
+       { type: "Battle" },
+       { type: "Free for All"},
+       { type: "Cooperative"},
+       { type: "Unholy Alliance"},
+       { type: "Megawealth"},
+       { type: "Duel"},
+       { type: "MeatGrind"},
+       { type: "NavalWar"},
+       { type: "Team Alliance"},
+    ];
+
     vm.abbr = $stateParams.game;
     vm.player = $stateParams.player;
 
@@ -36,6 +50,6 @@ function PlayerCtrl($state, $stateParams, API) {
     API.getPlayer(vm.abbr, vm.player).then(function (response) {
         vm.details = response;
         vm.rankTitle = vm.rankNames(); // TODO getter?
-        console.log(vm.details);
+        console.log(response);
     });
 }
