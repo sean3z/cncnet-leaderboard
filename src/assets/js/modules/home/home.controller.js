@@ -8,13 +8,14 @@ function HomeCtrl(API) {
     var vm = this;
 
     // Its a little hacky, but will do for now
-    var games = ['ts', 'fs', 'ra', 'am'];
+    var games = ['ts', 'fs', 'ra', 'am', 'yr'];
 
     vm.top5 = {
         ts: '',
         fs: '',
         ra: '',
-        am: ''
+        am: '',
+        yr: ''
     };
 
     games.forEach(function (key) {

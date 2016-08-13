@@ -13,8 +13,6 @@ function APISvc($http, $q) {
 
     return factory;
 
-    //////////
-
     function getTop50(game) {
         return request({
             url: '/ladder/' + game

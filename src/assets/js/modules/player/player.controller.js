@@ -11,7 +11,8 @@ function PlayerCtrl($state, $stateParams, API) {
   vm.player = $stateParams.player;
 
   API.getPlayer(vm.abbr, vm.player).then(function (response) {
-     vm.details = response;
+      vm.details = response;
+      console.log(vm.details);
   });
 
 }

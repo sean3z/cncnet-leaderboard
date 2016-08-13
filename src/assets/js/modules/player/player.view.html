@@ -75,7 +75,7 @@
                                         <i class="fa fa-level-up fa-fw"></i>
                                     </li>
                                     <li>
-                                        Total Games <strong>{{playerCtrlVm.details.losses + player.wins || 0}}</strong>
+                                        Total Games <strong>{{playerCtrlVm.details.games.length}}</strong>
                                         <i class="fa fa-diamond fa-fw"></i>
                                     </li>
                                 </ul>
@@ -119,9 +119,8 @@
                                 data-idno="{{game.idno}}">
                                 <td>
                                     <span class="label">
-                                        {{game.date * 1000 | date:'medium'}}
+                                        {{game.date * 1000 | date:'short'}}
                                     </span>
-                                    <br>
                                     <span class="label label-default">
                                         {{ game.dura | secondsToDateTime | date:'m'}} mins
                                     </span>

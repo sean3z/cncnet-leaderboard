@@ -1,8 +1,8 @@
 <div class="home-listings">
     <div class="feature-banner jumbo-feature text-center">
         <div class="container large">
-            <h2 class="text-uppercase">Leaderboard</h2>
-            <h5 class="thin-italic">(Public beta) Report issues at <a href="http://cncnet.org/forums">our forum</a></h5>
+            <h2 class="text-uppercase">CnCNet Ladders</h2>
+            <h5 class="thin-italic">(Under testing) Report issues at <a href="http://cncnet.org/forums">our forum</a></h5>
         </div>
     </div>
 
@@ -10,13 +10,58 @@
         <div class="angle-background"></div>
 
         <div class="container content text-center">
-            <h3 class="text-center text-uppercase">Leaderboards have arrived!</h3>
-            <h5 class="thin-italic">You can now compete against your fellow comrades in monthly rankings!</h5>
+            <h3 class="text-center text-uppercase">Ladders are coming!</h3>
+            <h5 class="thin-italic">We are currently testing, but feel free to browse.</h5>
         </div>
     </section>
 
     <section class="supported-games">
         <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3">
+                    <div class="thumbnail">
+                        <div class="holder">
+                            <div class="logo logo-yr">
+                                <a href="#/yr">
+                                    <img src="assets/images/game-logos/yr.png" style="width:300px">
+                                </a>
+                            </div>
+                            <div class="feature">
+                                <div class="panel-body">
+                                    <div class="table-responsive text-left">
+                                        <table class="table table-hover table-condensed">
+                                            <thead>
+                                                <tr>
+                                                    <th>Profile <i class="fa fa-user fa-fw"></i></th>
+                                                    <th>Points <i class="fa fa-bolt fa-fw"></i></th>
+                                                    <th>Won <i class="fa fa-level-up fa-fw"></i></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr ng-repeat="player in homeCtrlVm.top5.yr | limitTo : 5">
+                                                    <td>
+                                                        <a href="#/yr">{{player.name}}</a>
+                                                    </td>
+                                                    <td>{{player.points}} points</td>
+                                                    <td>{{player.wins || 0}}</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="caption">
+                                <h2>Yuri's Revenge Leaderboard</h2>
+                                <p>
+                                    <a href="#/yr" class="btn btn-danger btn-block" role="button">
+                                        View Full Leaderboard
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
             <div class="row">
                 <div class="col-md-6">
@@ -33,19 +78,20 @@
                                     <div class="table-responsive text-left">
                                         <table class="table table-hover table-condensed">
                                             <thead>
-                                            <tr>
-                                                <th>Profile <i class="fa fa-user fa-fw"></i></th>
-                                                <th>Points <i class="fa fa-bolt fa-fw"></i></th>
-                                                <th>Won <i class="fa fa-level-up fa-fw"></i></th>
-                                            </tr>
+                                                <tr>
+                                                    <th>Profile <i class="fa fa-user fa-fw"></i></th>
+                                                    <th>Points <i class="fa fa-bolt fa-fw"></i></th>
+                                                    <th>Won <i class="fa fa-level-up fa-fw"></i></th>
+                                                </tr>
                                             </thead>
                                             <tbody>
-                                            <tr ng-repeat="player in homeCtrlVm.top5.ra | limitTo : 5">
-                                                <td><a href="#/ra">{{player.name}}</a>
-                                                </td>
-                                                <td>{{player.points}} points</td>
-                                                <td>{{player.wins || 0}}</td>
-                                            </tr>
+                                                <tr ng-repeat="player in homeCtrlVm.top5.ra | limitTo : 5">
+                                                    <td>
+                                                        <a href="#/ra">{{player.name}}</a>
+                                                    </td>
+                                                    <td>{{player.points}} points</td>
+                                                    <td>{{player.wins || 0}}</td>
+                                                </tr>
                                             </tbody>
                                         </table>
                                     </div>
@@ -56,8 +102,10 @@
                                 <h2>Red Alert Leaderboard</h2>
 
                                 <p>
-                                    <a href="#/ra" class="btn btn-danger btn-block" role="button">View Full
-                                        Leaderboard</a>
+                                    <a href="#/ra" class="btn btn-danger btn-block" role="button">
+                                        View Full
+                                        Leaderboard
+                                    </a>
                                 </p>
                             </div>
                         </div>
@@ -78,19 +126,20 @@
                                     <div class="table-responsive text-left">
                                         <table class="table table-hover table-condensed">
                                             <thead>
-                                            <tr>
-                                                <th>Profile <i class="fa fa-user fa-fw"></i></th>
-                                                <th>Points <i class="fa fa-bolt fa-fw"></i></th>
-                                                <th>Won <i class="fa fa-level-up fa-fw"></i></th>
-                                            </tr>
+                                                <tr>
+                                                    <th>Profile <i class="fa fa-user fa-fw"></i></th>
+                                                    <th>Points <i class="fa fa-bolt fa-fw"></i></th>
+                                                    <th>Won <i class="fa fa-level-up fa-fw"></i></th>
+                                                </tr>
                                             </thead>
                                             <tbody>
-                                            <tr ng-repeat="player in homeCtrlVm.top5.am | limitTo : 5">
-                                                <td><a href="#/am">{{player.name}}</a>
-                                                </td>
-                                                <td>{{player.points}} points</td>
-                                                <td>{{player.wins || 0}}</td>
-                                            </tr>
+                                                <tr ng-repeat="player in homeCtrlVm.top5.am | limitTo : 5">
+                                                    <td>
+                                                        <a href="#/am">{{player.name}}</a>
+                                                    </td>
+                                                    <td>{{player.points}} points</td>
+                                                    <td>{{player.wins || 0}}</td>
+                                                </tr>
                                             </tbody>
                                         </table>
                                     </div>
@@ -101,8 +150,10 @@
                                 <h2>Red Alert : Aftermath Leaderboard</h2>
 
                                 <p>
-                                    <a href="#/am" class="btn btn-danger btn-block" role="button">View Full
-                                        Leaderboard</a>
+                                    <a href="#/am" class="btn btn-danger btn-block" role="button">
+                                        View Full
+                                        Leaderboard
+                                    </a>
                                 </p>
                             </div>
                         </div>
@@ -125,19 +176,20 @@
                                     <div class="table-responsive text-left">
                                         <table class="table table-hover table-condensed">
                                             <thead>
-                                            <tr>
-                                                <th>Profile <i class="fa fa-user fa-fw"></i></th>
-                                                <th>Points <i class="fa fa-bolt fa-fw"></i></th>
-                                                <th>Won <i class="fa fa-level-up fa-fw"></i></th>
-                                            </tr>
+                                                <tr>
+                                                    <th>Profile <i class="fa fa-user fa-fw"></i></th>
+                                                    <th>Points <i class="fa fa-bolt fa-fw"></i></th>
+                                                    <th>Won <i class="fa fa-level-up fa-fw"></i></th>
+                                                </tr>
                                             </thead>
                                             <tbody>
-                                            <tr ng-repeat="player in homeCtrlVm.top5.ts | limitTo : 5">
-                                                <td><a href="#/ts">{{player.name}}</a>
-                                                </td>
-                                                <td>{{player.points}} points</td>
-                                                <td>{{player.wins || 0}}</td>
-                                            </tr>
+                                                <tr ng-repeat="player in homeCtrlVm.top5.ts | limitTo : 5">
+                                                    <td>
+                                                        <a href="#/ts">{{player.name}}</a>
+                                                    </td>
+                                                    <td>{{player.points}} points</td>
+                                                    <td>{{player.wins || 0}}</td>
+                                                </tr>
                                             </tbody>
                                         </table>
                                     </div>
@@ -148,8 +200,10 @@
                                 <h2>Tiberian Sun Leaderboard</h2>
 
                                 <p>
-                                    <a href="#/ts" class="btn btn-danger btn-block" role="button">View Full
-                                        Leaderboard</a>
+                                    <a href="#/ts" class="btn btn-danger btn-block" role="button">
+                                        View Full
+                                        Leaderboard
+                                    </a>
                                 </p>
                             </div>
                         </div>
@@ -169,19 +223,20 @@
                                     <div class="table-responsive text-left">
                                         <table class="table table-hover table-condensed">
                                             <thead>
-                                            <tr>
-                                                <th>Profile <i class="fa fa-user fa-fw"></i></th>
-                                                <th>Points <i class="fa fa-bolt fa-fw"></i></th>
-                                                <th>Won <i class="fa fa-level-up fa-fw"></i></th>
-                                            </tr>
+                                                <tr>
+                                                    <th>Profile <i class="fa fa-user fa-fw"></i></th>
+                                                    <th>Points <i class="fa fa-bolt fa-fw"></i></th>
+                                                    <th>Won <i class="fa fa-level-up fa-fw"></i></th>
+                                                </tr>
                                             </thead>
                                             <tbody>
-                                            <tr ng-repeat="player in homeCtrlVm.top5.fs | limitTo : 5">
-                                                <td><a href="#/fs">{{player.name}}</a>
-                                                </td>
-                                                <td>{{player.points}} points</td>
-                                                <td>{{player.wins || 0}}</td>
-                                            </tr>
+                                                <tr ng-repeat="player in homeCtrlVm.top5.fs | limitTo : 5">
+                                                    <td>
+                                                        <a href="#/fs">{{player.name}}</a>
+                                                    </td>
+                                                    <td>{{player.points}} points</td>
+                                                    <td>{{player.wins || 0}}</td>
+                                                </tr>
                                             </tbody>
                                         </table>
                                     </div>
@@ -190,16 +245,18 @@
 
                             <div class="caption">
                                 <h2>Tiberian Sun : Firestorm Leaderboard </h2>
-
                                 <p>
-                                    <a href="#/fs" class="btn btn-danger btn-block" role="button">View Full
-                                        Leaderboard</a>
+                                    <a href="#/fs" class="btn btn-danger btn-block" role="button">
+                                        View Full
+                                        Leaderboard
+                                    </a>
                                 </p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+                                  
         </div>
     </section>
 </div>
