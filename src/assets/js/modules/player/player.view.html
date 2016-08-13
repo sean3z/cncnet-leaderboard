@@ -56,11 +56,10 @@
                         <div class="col-md-6">
                             <div class="profile-rank">
                                 <div class="text-right">
-                                    <h3>Rank #{{playerCtrlVm.details.rank}} </h3>
-                                    <h5>Colonel
-                                        <i ng-if="player.rank == 1" class="fa fa-trophy fa-fw cup-gold"></i>
-                                        <i ng-if="player.rank == 2" class="fa fa-trophy fa-fw cup-silver"></i>
-                                        <i ng-if="player.rank == 3" class="fa fa-trophy fa-fw cup-bronze"></i>
+                                    <h3>Rank #{{playerCtrlVm.rankTitle.position}}</h3>
+                                    <h5 class='{{playerCtrlVm.rankTitle.cup != null ? playerCtrlVm.rankTitle.cup : ""}}'>
+                                        <i class='fa fa-trophy fa-fw fa-2x cup-{{playerCtrlVm.rankTitle.cup != null ? playerCtrlVm.rankTitle.cup : " hidden"}}'></i>
+                                        {{playerCtrlVm.rankTitle.title}}
                                     </h5>
                                 </div>
                             </div>
@@ -129,7 +128,7 @@
                                     <div ng-repeat="participant in game.players">
                                         <ul class="list-unstyled">
                                             <li>
-                                                <a href="#/{{abbr }}/player/{{participant.name}}">
+                                                <a href="#{{abbr}}/player/{{participant.name}}">
                                                     <span class="game-faction faction_{{ participant.sid }}"></span>
                                                     <span class="label" ng-class="{'label-success': participant.won > 0, 'label-danger': participant.loss > 0, 'label-primary': game.oosy}">
                                                         {{participant.name}}
