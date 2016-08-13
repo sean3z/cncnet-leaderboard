@@ -1,10 +1,11 @@
 angular.module('API').factory('API', APISvc);
 
-APISvc.$inject =['$http', '$q'];
+APISvc.$inject = ['$http', '$q'];
+
 function APISvc($http, $q) {
     var factory = this;
-    factory.url = '//'+ window.location.hostname + '/api';
-
+    var hostName = window.location.host.split(":")[0] == "localhost" ? "ladder.cncnet.org" : window.location.hostname;
+    factory.url = '//'+ hostName + '/api';
     factory.getTop50 = getTop50;
     factory.getPlayer = getPlayer;
     factory.getHoF = getHoF;
