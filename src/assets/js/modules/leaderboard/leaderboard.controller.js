@@ -9,7 +9,7 @@ function LeaderboardCtrl($stateParams, API, GameSvc) {
     vm.abbr = $stateParams.game;
 
     vm.model = {
-        search: 'hello'
+        search: ''
     };
 
     API.getTop50(vm.abbr).then(function(response) {
