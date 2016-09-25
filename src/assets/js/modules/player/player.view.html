@@ -25,72 +25,57 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="panel panel-default panel-profile clearfix">
-                        <div class="col-md-6">
+                        <div class="col-md-8">
 
                             <div class="row">
-                                <div class="col-md-5">
-                                    <div class="profile-picture" ng-class="{avatar: playerCtrlVm.details.avatar}">
-                                        <img ng-if="player.avatar" ng-src="{{playerCtrlVm.details.avatar}}" height="125"/>
-                                        <i ng-if="!player.avatar" class="fa fa-user-secret fa-4x"></i>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-7 quick-fire">
+                                <div class="col-md-10 quick-fire">
                                     <h3>{{playerCtrlVm.details.name}}'s <br class="hidden-xs">
                                         <small>Battle Statistics</small>
                                     </h3>
-                                    <!--<ul class="list-unstyled rank-list">-->
-                                    <!--<li>-->
-                                    <!--<span class="text-uppercase">To be promoted</span>-->
-                                    <!--<progressbar value="55">5 wins required</progressbar>-->
-                                    <!--</li>-->
-                                    <!--<li>-->
-                                    <!--<span class="text-uppercase">To be demoted</span>-->
-                                    <!--<progressbar value="90" type="danger">1 loss required</progressbar>-->
-                                    <!--</li>-->
-                                    <!--</ul>-->
+
+                                    <div class="profile-stats">
+                                        <ul class="list-inline">
+                                            <li>
+                                                Battle Clan <strong>{{playerCtrlVm.clan != null ? playerCtrlVm.clan : ""}}</strong>
+                                                <i class="fa fa-flag fa-fw" aria-hidden="true"></i> 
+                                            </li>
+                                            <li>
+                                                Points <strong>{{playerCtrlVm.details.points}}</strong>
+                                                <i class="fa fa-bolt fa-fw"></i>
+                                            </li>
+                                            <li>
+                                                Won <strong>{{playerCtrlVm.details.wins || 0}}</strong>
+                                                <i class="fa fa-level-up fa-fw"></i>
+                                            </li>
+                                            <li>
+                                                Total Games <strong>{{playerCtrlVm.details.games.length}}</strong>
+                                                <i class="fa fa-diamond fa-fw"></i>
+                                            </li>
+                                        </ul>
+                                        <ul class="list-inline">
+                                            <li>
+                                                Disconnects <strong>{{playerCtrlVm.details.disconnects || 0}}</strong>
+                                                <i class="fa fa-signal fa-fw"></i>
+                                            </li>
+                                            <li>
+                                                <span class="label label-info ng-binding">
+                                                    Winning {{playerCtrlVm.details.wins / (playerCtrlVm.details.wins + playerCtrlVm.details.losses) * 100 | number:0}}% of games
+                                                    <i class="fa fa-tachometer fa-fw"></i>
+                                                </span>
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="col-md-6">
-                            <div class="profile-rank">
-                                <div class="text-right">
-                                    <h3>Rank #{{playerCtrlVm.rankTitle.position}}</h3>
-                                    <h5 class='{{playerCtrlVm.rankTitle.cup != null ? playerCtrlVm.rankTitle.cup : ""}}'>
-                                        <i class='fa fa-trophy fa-fw fa-2x cup-{{playerCtrlVm.rankTitle.cup != null ? playerCtrlVm.rankTitle.cup : " hidden"}}'></i>
-                                        {{playerCtrlVm.rankTitle.title}}
-                                    </h5>
-                                </div>
-                            </div>
-                            <div class="profile-stats">
-                                <ul class="list-inline text-right">
-                                    <li>
-                                        Points <strong>{{playerCtrlVm.details.points}}</strong>
-                                        <i class="fa fa-bolt fa-fw"></i>
-                                    </li>
-                                    <li>
-                                        Won <strong>{{playerCtrlVm.details.wins || 0}}</strong>
-                                        <i class="fa fa-level-up fa-fw"></i>
-                                    </li>
-                                    <li>
-                                        Total Games <strong>{{playerCtrlVm.details.games.length}}</strong>
-                                        <i class="fa fa-diamond fa-fw"></i>
-                                    </li>
-                                </ul>
-
-                                <ul class="list-inline text-right">
-                                    <li>
-                                        Disconnects <strong>{{playerCtrlVm.details.disconnects || 0}}</strong>
-                                        <i class="fa fa-signal fa-fw"></i>
-                                    </li>
-                                    <li>
-                                        <span class="label label-info ng-binding">
-                                            Winning {{playerCtrlVm.details.wins / (playerCtrlVm.details.wins + playerCtrlVm.details.losses) * 100 | number:0}}% of games
-                                            <i class="fa fa-tachometer fa-fw"></i>
-                                        </span>
-                                    </li>
-                                </ul>
+                        <div class="col-md-4">
+                            <div class="profile-rank text-right">
+                                <h3>Rank #{{playerCtrlVm.rankTitle.position}}</h3>
+                                <h5 class='{{playerCtrlVm.rankTitle.cup != null ? playerCtrlVm.rankTitle.cup : ""}}'>
+                                    <i class='fa fa-trophy fa-fw fa-2x cup-{{playerCtrlVm.rankTitle.cup != null ? playerCtrlVm.rankTitle.cup : " hidden"}}'></i>
+                                    {{playerCtrlVm.rankTitle.title}}
+                                </h5>
                             </div>
                         </div>
                     </div>
