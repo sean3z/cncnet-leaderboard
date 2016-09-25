@@ -60,7 +60,7 @@ function APISvc($http, $q) {
 
     function search(game, name) {
         var deferred = $q.defer();
-        $http.post(factory.url + '/' + game + '/' + 'search', { "player": name })
+        $http.post(factory.url + '/ladder/' + game + '/' + 'search', { "player": name })
             .success(function (data, status, headers, config) { return deferred.resolve(data); })
             .error(function (data, status, headers, config) { console.log(status);});
         return deferred.promise;
