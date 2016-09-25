@@ -128,7 +128,7 @@
                                     <div ng-repeat="participant in game.players">
                                         <ul class="list-unstyled">
                                             <li>
-                                                <a href="#{{abbr}}/player/{{participant.name}}">
+                                                <a href="#/{{playerCtrlVm.abbr}}/player/{{participant.name}}">
                                                     <span class="game-faction faction_{{ playerCtrlVm.abbr == 'yr' ? participant.cty : participant.sid }}"></span>
                                                     <span class="label" ng-class="{'label-success': participant.won > 0, 'label-danger': participant.loss > 0, 'label-primary': game.oosy}">
                                                         {{participant.name}}
